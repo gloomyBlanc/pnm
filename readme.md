@@ -22,7 +22,7 @@ PNM画像をReaderから読み込み、image.Configのみを返します。
 <pre>
 func Encode(w <a href="https://pkg.go.dev/io">io</a>.<a href="https://pkg.go.dev/io#Writer">Writer</a>, img <a href="https://pkg.go.dev/image">image</a>.<a href="https://pkg.go.dev/image#Image">Image</a>) <a href="https://pkg.go.dev/builtin#error">error</a>
 </pre>
-imgをwにPGM(P5)もしくはPPM(P6)としてwに出力します。
+imgをPGM(P5)もしくはPPM(P6)としてwに出力します。
 
 ### func [EncodeWithType](pnm/writer.go#23)
 <pre>
