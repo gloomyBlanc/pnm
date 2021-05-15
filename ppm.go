@@ -93,7 +93,7 @@ func (e *pnmEncoder) ppmWriteRasterPlain(img image.Image) error {
 	rect := img.Bounds()
 	for i = rect.Min.Y; i < rect.Max.Y; i++ {
 		for j = rect.Min.X; j < rect.Max.X; j++ {
-			r, g, b, _ = rect.At(j, i).RGBA()
+			r, g, b, _ = img.At(j, i).RGBA()
 			e.writer.WriteString(
 				fmt.Sprintf("%d %d %d",
 					r,
@@ -121,7 +121,7 @@ func (e *pnmEncoder) ppmWriteRasterBinary(img image.Image) error {
 	rect := img.Bounds()
 	for i = rect.Min.Y; i < rect.Max.Y; i++ {
 		for j = rect.Min.X; j < rect.Max.X; j++ {
-			r, g, b, _ = rect.At(j, i).RGBA()
+			r, g, b, _ = img.At(j, i).RGBA()
 			if overFF {
 				e.writer.Write([]byte{
 					byte(r >> 8), byte(r & 0xFF),
