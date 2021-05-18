@@ -136,6 +136,7 @@ func (e *pnmEncoder) ppmWriteRasterBinary(img image.Image) error {
 				})
 			}
 		}
+		e.writer.Flush()
 	}
 	return nil
 }
