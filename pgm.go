@@ -118,6 +118,7 @@ func (e *pnmEncoder) pgmWriteRasterBinary(img image.Image) error {
 				e.writer.WriteByte(byte(y & 0xFF))
 			}
 		}
+		e.writer.Flush()
 	}
 	return nil
 }
